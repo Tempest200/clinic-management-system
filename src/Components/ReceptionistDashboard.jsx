@@ -8,7 +8,8 @@ import { PiHospitalLight } from "react-icons/pi";
 import {  IoMdLogOut } from "react-icons/io";
 import './ReceptionistDashboard.css';
 import { signOut ,getAuth} from 'firebase/auth';
-import { auth } from '../FirebaseConfig';
+import { useNavigate } from 'react-router-dom';
+
 
 const ReceptionistDashboard = () => {
   const [formData, setFormData] = useState({

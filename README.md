@@ -1,70 +1,124 @@
-# Getting Started with Create React App
+Doctor Dashboard - Clinic Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+🩺 Overview
 
-## Available Scripts
+The Doctor Dashboard is part of the Clinic Management System designed for streamlined communication and efficient management between doctors and receptionists. It includes functionalities like:
 
-In the project directory, you can run:
+Role-based authentication (Doctor/Receptionist)
 
-### `npm start`
+Token generation for patients
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Patient record tracking and prescription entry
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Real-time Firebase database synchronization
 
-### `npm test`
+Billing and status management
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+📁 Project Structure
 
-### `npm run build`
+clinic-management-system/
+├── public/
+├── src/
+│   ├── Components/
+│   │   ├── DoctorDashboard.js
+│   │   ├── ReceptionistDashboard.js
+│   │   ├── LoginPage.js
+│   │   └── ...
+│   ├── firebase.js
+│   ├── App.js
+│   ├── App.css
+│   └── index.js
+├── README.md
+├── package.json
+└── .firebaserc
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+🚀 Workflow Explanation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Authentication
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Role-based login via Firebase Auth.
 
-### `npm run eject`
+Redirect based on role to respective dashboards.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. Doctor Dashboard
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Displays total patients, pending appointments.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Lists today's patients with editable status buttons.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Prescriptions are added in a modal and saved to Firebase.
 
-## Learn More
+3. Receptionist Dashboard
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Adds new patients and generates token.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Displays patient data from Firebase in a table.
 
-### Code Splitting
+Separate page for billing: generates invoice, calculates GST, saves to database.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+4. Firebase Sync
 
-### Analyzing the Bundle Size
+Realtime database fetches data on changes.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Uses onSnapshot/onValue listeners.
 
-### Making a Progressive Web App
+5. Logout
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Secure logout using Firebase Auth's signOut().
 
-### Advanced Configuration
+🛠️ System Design (LLD)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Entities:
 
-### Deployment
+User (Doctor/Receptionist)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Patient
 
-### `npm run build` fails to minify
+Token
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Prescription
+
+Billing
+
+Key Functions:
+
+addPatient() - Adds patient and generates token
+
+updateStatus() - Changes appointment status
+
+addPrescription() - Saves doctor's notes
+
+generateInvoice() - Calculates total and tax
+
+Database (Firebase Realtime):
+
+/roles/{uid} = doctor | receptionist
+/patients/{id} = {name, dob, status, contact, token}
+/prescriptions/{patientId} = {notes, timestamp}
+/billing/{patientId} = {items, total, gst}
+
+
+Architecture Diagram
+
+Frontend (React) ➝ Firebase Authentication ➝ Firebase Realtime Database
+
+User login triggers role-based routing.
+
+Real-time updates sync data across dashboards.
+
+(image.png)
+
+
+
+## 💻 Run Locally
+
+```bash
+# Clone the project
+git clone https://github.com/Tempest200/clinic-management-system.git
+cd clinic-management-system
+
+# Install dependencies
+npm install
+
+# Start development server
+npm start
