@@ -55,49 +55,49 @@ clinic-management-system/
 
 Visit the Login Page
 
-Navigate to / or your deployed app’s homepage.
+.Navigate to / or your deployed app’s homepage.
 
-Enter your email and password.
+.Enter your email and password.
 
-If you're a Doctor, you'll be redirected to the Doctor Dashboard.
+.If you're a Doctor, you'll be redirected to the Doctor Dashboard.
 
-If you're a Receptionist, you'll be redirected to the Receptionist Dashboard.
+.If you're a Receptionist, you'll be redirected to the Receptionist Dashboard.
 
 Doctor Dashboard Usage
 
-View today’s patient list with pending/completed statuses.
+.View today’s patient list with pending/completed statuses.
 
-Click on a patient’s row to open a popup and write prescriptions.
+.Click on a patient’s row to open a popup and write prescriptions.
 
-Change appointment status from Pending to Complete.
+.Change appointment status from Pending to Complete.
 
 Receptionist Dashboard Usage
 
-Add a new patient by clicking the 'New Patient' button.
+.Add a new patient by clicking the 'New Patient' button.
 
-Fill in patient details including contact, emergency, and relative info.
+.Fill in patient details including contact, emergency, and relative info.
 
-Save the form and automatically generate a token.
+.Save the form and automatically generate a token.
 
-Switch to Billing tab to handle completed appointments only.
+.Switch to Billing tab to handle completed appointments only.
 
-Select service type, patient, payment mode, and generate an invoice.
+.Select service type, patient, payment mode, and generate an invoice.
 
 Billing
 
-Auto-populates service name and ID.
+.Auto-populates service name and ID.
 
-Calculates subtotal, tax (GST), and total.
+.Calculates subtotal, tax (GST), and total.
 
-Allows payment by cash, credit, or check.
+.Allows payment by cash, credit, or check.
 
-Click 'Complete' to save billing info or 'Reset' to clear fields.
+.Click 'Complete' to save billing info or 'Reset' to clear fields.
 
 Logout
 
-Click the Logout button at the top right of the dashboard.
+.Click the Logout button at the top right of the dashboard.
 
-You will be redirected to the login page securely.
+.You will be redirected to the login page securely.
 
 
 
