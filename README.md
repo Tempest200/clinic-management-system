@@ -120,7 +120,7 @@ User login triggers role-based routing.
 
 Real-time updates sync data across dashboards.
 
-(image.png)
+![Architecture Diagram](image.png)
 
 
 
