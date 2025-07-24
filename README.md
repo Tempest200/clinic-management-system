@@ -46,6 +46,62 @@ clinic-management-system/
 
 └── .firebaserc
 
+
+
+
+## 🛠️ How to Use
+
+#🧭 Step-by-Step Usage Instructions
+
+Visit the Login Page
+
+Navigate to / or your deployed app’s homepage.
+
+Enter your email and password.
+
+If you're a Doctor, you'll be redirected to the Doctor Dashboard.
+
+If you're a Receptionist, you'll be redirected to the Receptionist Dashboard.
+
+Doctor Dashboard Usage
+
+View today’s patient list with pending/completed statuses.
+
+Click on a patient’s row to open a popup and write prescriptions.
+
+Change appointment status from Pending to Complete.
+
+Receptionist Dashboard Usage
+
+Add a new patient by clicking the 'New Patient' button.
+
+Fill in patient details including contact, emergency, and relative info.
+
+Save the form and automatically generate a token.
+
+Switch to Billing tab to handle completed appointments only.
+
+Select service type, patient, payment mode, and generate an invoice.
+
+Billing
+
+Auto-populates service name and ID.
+
+Calculates subtotal, tax (GST), and total.
+
+Allows payment by cash, credit, or check.
+
+Click 'Complete' to save billing info or 'Reset' to clear fields.
+
+Logout
+
+Click the Logout button at the top right of the dashboard.
+
+You will be redirected to the login page securely.
+
+
+
+
 🚀 Workflow Explanation
 
 1. Authentication
@@ -79,6 +135,24 @@ Uses onSnapshot/onValue listeners.
 5. Logout
 
 Secure logout using Firebase Auth's signOut().
+
+Uses useNavigate() to redirect back to login page after logout.
+
+import { useNavigate } from 'react-router-dom';
+import { getAuth, signOut } from 'firebase/auth';
+
+const navigate = useNavigate();
+const auth = getAuth();
+
+const handleLogout = () => {
+  signOut(auth)
+    .then(() => {
+      navigate('/');
+    })
+    .catch((error) => {
+      console.error('Logout Error:', error);
+    });
+};
 
 🛠️ System Design (LLD)
 
