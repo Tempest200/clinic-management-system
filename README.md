@@ -53,6 +53,8 @@ clinic-management-system/
 
 #🧭 Step-by-Step Usage Instructions
 
+[View it on GitHub live Pages](https://tempest200.github.io/clinic-management-system/)
+
 Visit the Login Page
 ---------------------
 
