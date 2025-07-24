@@ -1,12 +1,15 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import LoginPage from './Components/LoginPage';
 import DoctorDashboard from './Components/DoctorDashboard';
 import ReceptionistDashboard from './Components/ReceptionistDashboard';
 import './App.css';
   
 function App() {
-  return (
+  
+   
+    
    <Router basename="/clinic-management-system"> {/* basename is important for GitHub Pages */}
       <Routes>
         <Route path="/" element={<LoginPage />} />

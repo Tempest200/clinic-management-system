@@ -1,8 +1,9 @@
 // pages/DoctorDashboard.jsx
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { db, auth } from '../FirebaseConfig';
 import { collection, onSnapshot, updateDoc, doc, query, Timestamp} from 'firebase/firestore';
-import { signOut } from 'firebase/auth';
+import { signOut ,getAuth } from 'firebase/auth';
 import { MdPendingActions } from "react-icons/md";
 import { IoIosPeople, IoMdLogOut } from "react-icons/io";
 import { PiHospitalLight } from "react-icons/pi";
@@ -15,6 +16,8 @@ const DoctorDashboard = () => {
   const [selectedPatient, setSelectedPatient] = useState(null);
   const [prescription, setPrescription] = useState('');
   const [modalOpen, setModalOpen] = useState(false);
+  const navigate = useNavigate();
+  const auth = getAuth();
 
   useEffect(() => {
     const today = new Date();
@@ -36,6 +39,16 @@ const DoctorDashboard = () => {
     setModalOpen(true);
   };
 
+  const handleLogout = () => {
+  signOut(auth)
+    .then(() => {
+      navigate('/'); // Redirect to login
+    })
+    .catch((error) => {
+      console.error('Logout Error:', error);
+    });
+};
+
   const handleCloseModal = () => {
     setModalOpen(false);
     setSelectedPatient(null);
@@ -55,10 +68,7 @@ const DoctorDashboard = () => {
     handleCloseModal();
   };
 
-  const handleLogout = async () => {
-    await signOut(auth);
-    window.location.href = '/';
-  };
+  
 
   return (
     <div className="doctor-dashboard">
