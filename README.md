@@ -60,6 +60,17 @@ Visit the Login Page
 
 .Enter your email and password.
 
+Example (
+## For doctor webpage
+id:- doctor@gmail.com
+    pass:-123456
+
+## For the receptionist webpage
+id:- receptionist@gmail.com
+    pass:- 654321
+
+)
+
 .If you're a Doctor, you'll be redirected to the Doctor Dashboard.
 
 .If you're a Receptionist, you'll be redirected to the Receptionist Dashboard.
