@@ -7,7 +7,7 @@ import ReceptionistDashboard from './Components/ReceptionistDashboard';
 import './App.css';
   
 function App() {
-  
+  return(
    
     
    <Router basename="/clinic-management-system"> {/* basename is important for GitHub Pages */}
