@@ -111,6 +111,7 @@ Logout
 
 
 🚀 Workflow Explanation
+----------------
 
 1. Authentication
 
