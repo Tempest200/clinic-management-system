@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/clinic-management-system/static/css/main.f5466c2c.css",
+    "main.js": "/clinic-management-system/static/js/main.3e452a42.js",
+    "static/js/453.56916c11.chunk.js": "/clinic-management-system/static/js/453.56916c11.chunk.js",
+    "static/media/clinic-logo.png": "/clinic-management-system/static/media/clinic-logo.82d4a0dcb0b00c174f5e.png",
+    "index.html": "/clinic-management-system/index.html",
+    "main.f5466c2c.css.map": "/clinic-management-system/static/css/main.f5466c2c.css.map",
+    "main.3e452a42.js.map": "/clinic-management-system/static/js/main.3e452a42.js.map",
+    "453.56916c11.chunk.js.map": "/clinic-management-system/static/js/453.56916c11.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f5466c2c.css",
+    "static/js/main.3e452a42.js"
+  ]
+}
