@@ -7,7 +7,7 @@ import { RiEmpathizeFill } from "react-icons/ri";
 import { PiHospitalLight } from "react-icons/pi";
 import {  IoMdLogOut } from "react-icons/io";
 import './ReceptionistDashboard.css';
-import { signOut } from 'firebase/auth';
+import { signOut ,getAuth} from 'firebase/auth';
 import { auth } from '../FirebaseConfig';
 
 const ReceptionistDashboard = () => {
@@ -29,6 +29,8 @@ const ReceptionistDashboard = () => {
   const [patientsList, setPatientsList] = useState([]);
   const [generatedToken, setGeneratedToken] = useState('');
   const [filterText, setFilterText] = useState('');
+   const navigate = useNavigate();
+  const auth = getAuth();
 
   useEffect(() => {
     generateInvoice();
@@ -58,6 +60,16 @@ const ReceptionistDashboard = () => {
     return 'TKN-' + Math.floor(1000 + Math.random() * 9000);
   };
 
+  const handleLogout = () => {
+    signOut(auth)
+      .then(() => {
+        navigate('/'); // Redirect to login
+      })
+      .catch((error) => {
+        console.error('Logout Error:', error);
+      });
+  };
+  
   const calculateTotals = () => {
     const subtotal = billingData.reduce((sum, item) => sum + item.amount, 0);
     const gst = subtotal * 0.18;
@@ -136,11 +148,7 @@ const ReceptionistDashboard = () => {
     generateInvoice();
   };
 
-  const handleLogout = () => {
-    signOut(auth).then(() => {
-      window.location.href = '/';
-    });
-  };
+  
 
   const { subtotal, gst, total } = calculateTotals();
 
