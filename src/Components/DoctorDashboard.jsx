@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { db, auth } from '../FirebaseConfig';
 import { collection, onSnapshot, updateDoc, doc, query, Timestamp} from 'firebase/firestore';
 import { signOut } from 'firebase/auth';
-import { FaUserDoctor } from "react-icons/fa6";
 import { MdPendingActions } from "react-icons/md";
 import { IoIosPeople, IoMdLogOut } from "react-icons/io";
 import { PiHospitalLight } from "react-icons/pi";
