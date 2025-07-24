@@ -17,19 +17,33 @@ Billing and status management
 📁 Project Structure
 
 clinic-management-system/
+
 ├── public/
+
 ├── src/
+
 │   ├── Components/
+
 │   │   ├── DoctorDashboard.js
+
 │   │   ├── ReceptionistDashboard.js
+
 │   │   ├── LoginPage.js
+
 │   │   └── ...
+
 │   ├── firebase.js
+
 │   ├── App.js
+
 │   ├── App.css
+
 │   └── index.js
+
 ├── README.md
+
 ├── package.json
+
 └── .firebaserc
 
 🚀 Workflow Explanation
@@ -90,7 +104,7 @@ addPrescription() - Saves doctor's notes
 
 generateInvoice() - Calculates total and tax
 
-Database (Firebase Realtime):
+## Database (Firebase Realtime):
 
 /roles/{uid} = doctor | receptionist
 /patients/{id} = {name, dob, status, contact, token}
