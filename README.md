@@ -54,6 +54,7 @@ clinic-management-system/
 #🧭 Step-by-Step Usage Instructions
 
 Visit the Login Page
+---------------------
 
 .Navigate to / or your deployed app’s homepage.
 
@@ -63,7 +64,9 @@ Visit the Login Page
 
 .If you're a Receptionist, you'll be redirected to the Receptionist Dashboard.
 
+
 Doctor Dashboard Usage
+-------------------------
 
 .View today’s patient list with pending/completed statuses.
 
@@ -71,7 +74,9 @@ Doctor Dashboard Usage
 
 .Change appointment status from Pending to Complete.
 
+
 Receptionist Dashboard Usage
+-----------------------------
 
 .Add a new patient by clicking the 'New Patient' button.
 
@@ -83,7 +88,9 @@ Receptionist Dashboard Usage
 
 .Select service type, patient, payment mode, and generate an invoice.
 
+
 Billing
+--------
 
 .Auto-populates service name and ID.
 
@@ -93,8 +100,9 @@ Billing
 
 .Click 'Complete' to save billing info or 'Reset' to clear fields.
 
-Logout
 
+Logout
+------
 .Click the Logout button at the top right of the dashboard.
 
 .You will be redirected to the login page securely.
